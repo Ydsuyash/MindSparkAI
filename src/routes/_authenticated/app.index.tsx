@@ -3,7 +3,7 @@ import { useEffect, useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import {
   Flame, Trophy, Target, Sparkles, ChevronRight, Volume2, VolumeX,
-  Calendar, TrendingUp, Brain, Zap, Activity, Clock, Play
+  Calendar, TrendingUp, Brain, Zap, Activity, Clock, Play, Gamepad2
 } from "lucide-react";
 import {
   Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer,
@@ -80,7 +80,7 @@ function Home() {
     const sorted = [...scores].sort((a, b) => (b.difficulty_level || 0) - (a.difficulty_level || 0));
     const bestSkill = SKILLS.find(s => s.id === sorted[0].skill)?.label || "Focus";
     const weakestSkill = SKILLS.find(s => s.id === sorted[sorted.length - 1].skill);
-    const recGame = GAMES.find(g => g.skillId === weakestSkill?.id) || GAMES[0];
+    const recGame = GAMES.find(g => g.skill === weakestSkill?.id) || GAMES[0];
     return { best: bestSkill, weakest: weakestSkill?.label || "Memory", recGame };
   }, [scores]);
 

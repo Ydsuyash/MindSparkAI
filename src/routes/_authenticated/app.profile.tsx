@@ -186,7 +186,6 @@ function PlayerProfile() {
                     </div>
                     <div className="text-center">
                       <div className="font-black text-sm leading-tight">{badge.label}</div>
-                      <div className="text-[10px] font-bold text-muted-foreground uppercase mt-1 tracking-wider">{badge.category}</div>
                     </div>
                   </div>
                 );
